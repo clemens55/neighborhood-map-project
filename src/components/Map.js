@@ -1,25 +1,42 @@
-import React, { Component } from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import React from 'react'
+import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
 
-
-class Map extends Component {
-   render() {
-   const GoogleMapMain = withGoogleMap(props => (
-      <GoogleMap
-        defaultCenter = { { lat: 40.756795, lng: -73.954298 } }
-        defaultZoom = { 13 }
-      >
-      </GoogleMap>
-   ));
-   return(
-      <div>
-        <GoogleMapMain
-          containerElement={ <div className="map" /> }
-          mapElement={ <div style={{ height: `100%` }} /> }
-        />
+function MapContainer(props) {
+    return(
+      <div id="map">
+        <Map google={props.google}
+          initialCenter={{ lat: 51.5106045, lng: -0.1544916 }}
+          zoom={13.3}
+          onClick={props.onMapClicked}
+        >
+          {props.filteredLocations.map((marker, index) =>(
+                <Marker
+                  key={index}
+                  title={marker.name}
+                  name={marker.name}
+                  address={marker.address}
+                  position={{
+                    lat: marker.location.lat,
+                    lng: marker.location.lng }}
+                  onClick={props.onMarkerClick}
+                  animation={props.activeMarker ? (marker.name === props.activeMarker.title ? '1' : '0') : '0'}
+                />
+              ))}
+          <InfoWindow
+            marker={props.activeMarker}
+            visible={props.showingInfoWindow}
+            onClose={props.onInfoWindowClose}
+          >
+            <div>
+              <h3>{props.selectedPlace.name}</h3>
+              <p>{props.selectedPlace.address}</p>
+            </div>
+          </InfoWindow>
+        </Map>
       </div>
-   );
-   }
-};
+    )
+}
 
-export default Map;
+export default GoogleApiWrapper({
+  apiKey: ("AIzaSyBQ9G8_MuMOpa7W7cvCfTxQGYL2ittra7o")
+})(MapContainer)

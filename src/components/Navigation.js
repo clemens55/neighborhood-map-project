@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-class Navigation extends Component {
-   render(){
+class Nav extends Component {
+  render(){
     return(
-      <div className="navigation"></div>
-    );
+      <nav id="navbar">
+        <span className="logo">Neighboorhood React Map</span>
+      </nav>
+    )
   }
-};
+}
 
-export default Navigation;
+export default Nav

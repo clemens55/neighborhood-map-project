@@ -1,31 +1,48 @@
-.app {
-    display: flex;   
-    flex-wrap: wrap;
+#navbar {
+  height: 50px;
+  padding: 15px 0 0 0;
+  background-color: #403f3f;
+  text-align: center;
+  color: white;
 }
-
-.header {
-    background-color: #292929;
-    height: auto;
-    width: 100%;
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
 }
-
-#title {
-    margin-left: 10px;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 20px;
+#map {
+  width: 75%;
+  height: 100%;
+  overflow: hidden;
 }
-
-.navigation {
-    background-color: #292929;
-    width: 200px;
-    height: 500px;
-    margin-top: 3px;
+@media screen and (max-width: 500px){
+  #sidebar {
+    display: none;
+  }
 }
-
-.map {
-    width: 500px;
-    height: 500px;
-    margin: 3px;
+#sidebar {
+  height: 100%;
+  width: 25%;
+  background: #3b5b96;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 65px;
+  left: 0px;
+  z-index: 99;
+}
+#sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+#sidebar-list li {
+  background-color: #7094bf;
+  padding: 10px;
+  margin: 10px auto;
+  width: calc(95% - 20px);
+  cursor: pointer;
+}
+#sidebar-search {
+  margin: 10px auto;
+  width: calc(95% - 20px);
+  padding: 10px;
 }
