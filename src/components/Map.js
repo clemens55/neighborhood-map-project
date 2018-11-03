@@ -1,7 +1,7 @@
 import React from 'react'
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react'
 
-function MapContainer(props) {
+function LoadMap(props) {
     return(
       <div id="map">
         <Map google={props.google}
@@ -39,4 +39,4 @@ function MapContainer(props) {
 
 export default GoogleApiWrapper({
   apiKey: ("AIzaSyBQ9G8_MuMOpa7W7cvCfTxQGYL2ittra7o")
-})(MapContainer)
+})(LoadMap)

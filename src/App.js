@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
-import Nav from './components/Navigation.js';
+import React, { Component } from 'react'
+import './App.css'
+import Header from './components/Header.js'
 import MapContainer from './components/Map.js'
 import Sidebar from './components/Sidebar.js'
 import escapeRegExp from 'escape-string-regexp'
@@ -12,17 +12,11 @@ class App extends Component {
     showingInfoWindow: false,
     query: '',
     locations: [],
-    tabIndex: -1,
     active: false
   }
 
   componentDidMount = () => {
     this.getLocations()
-    this.handleTabIndex()
-  }
-
-  componentDidUpdate= () => {
-    this.handleTabIndex()
   }
 
   getLocations = () => { //fetch locations from Foursquare API -> searching in Vienna for Coffee
@@ -82,15 +76,6 @@ class App extends Component {
     }
   }
 
-  handleTabIndex = (i) => {
-    var mapLinks = document.querySelectorAll('a')
-    for (i; i < mapLinks.length; i++) {
-      mapLinks[i].tabIndex = "-1";
-    }
-    [...document.querySelectorAll('.gmnoprint map area')].tabIndex=[0]
-  }
-
-
   render() {
     const {locations, query} =  this.state
     let filteredLocations
@@ -103,7 +88,7 @@ class App extends Component {
 
     return (
       <div id="app">
-        <Nav />
+        <Header />
         <Sidebar
           filteredLocations={filteredLocations}
           onLinkClick={this.onLinkClick}

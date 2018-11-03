@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-class Header extends Component {
-   render(){
+class Navigation extends Component {
+  render(){
     return(
-        <div className="header">
-            <div id="title">Vegetarian Restaurants</div>
-        </div>
-    );
+      <nav id="navbar">
+        <div id="logo">Coffee Shops</div>
+        <div id="logo1">in London</div>
+      </nav>
+    )
   }
-};
+}
 
-export default Header;
+export default Navigation
