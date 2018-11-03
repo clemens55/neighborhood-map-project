@@ -5,7 +5,7 @@ function MapContainer(props) {
     return(
       <div id="map">
         <Map google={props.google}
-          initialCenter={{ lat: 51.5106045, lng: -0.1544916 }}
+          initialCenter={{ lat: 51.5117506, lng: -0.1242792 }}
           zoom={13.3}
           onClick={props.onMapClicked}
         >

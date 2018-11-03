@@ -102,7 +102,7 @@ class App extends Component {
     }
 
     return (
-      <div>
+      <div id="app">
         <Nav />
         <Sidebar
           filteredLocations={filteredLocations}

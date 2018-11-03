@@ -15,8 +15,6 @@ function Sidebar(props){
     })
   return(
     <div id="sidebar">
-      <h2 id="sidebar-title">Coffee Shops</h2>
-      <h3><i>in Vienna</i></h3>
       <input
         type="text"
         id="sidebar-search"

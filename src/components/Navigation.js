@@ -4,7 +4,8 @@ class Nav extends Component {
   render(){
     return(
       <nav id="navbar">
-        <span className="logo">Neighboorhood React Map</span>
+        <div id="logo">Coffee Shops</div>
+        <div id="logo1">in London</div>
       </nav>
     )
   }

@@ -1,48 +1,95 @@
 #navbar {
-  height: 50px;
-  padding: 15px 0 0 0;
-  background-color: #403f3f;
-  text-align: center;
-  color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #403f3f;
+    text-align: center;
+    color: white;
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    border-bottom: 8px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    border-style: solid;
+    border-color: #536a84;
 }
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
+
+#logo {
+    font-size: 1.5em;
+    font-weight: bold;
 }
+
+#logo1 {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
 #map {
-  width: 75%;
-  height: 100%;
-  overflow: hidden;
+    height: 100%;
+    overflow: hidden;
 }
+
 @media screen and (max-width: 500px){
-  #sidebar {
-    display: none;
-  }
+    #sidebar-list {
+       visibility: hidden;
+    }
+    
+    #sidebar {
+        width: 100%;
+        background-color: wheat;
+        height: 30px;
+    }
+    
 }
+
+@media screen and (min-width: 501px){
+    #sidebar {
+        background-color: #403f3f;
+        border-right: 8px;
+        border-left: 0px;
+        border-bottom: 0px;
+        border-top: 0px;
+        border-style: solid;
+        border-color: #536a84;
+        width: 25%;
+        height: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 1000px){
+    body {
+        width: 1000px;
+    }
+    
+}
+
 #sidebar {
-  height: 100%;
-  width: 25%;
-  background: #3b5b96;
-  text-align: center;
-  color: white;
-  position: absolute;
-  top: 65px;
-  left: 0px;
-  z-index: 99;
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 0px;
+    z-index: 99;
 }
+
 #sidebar-list {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
+
 #sidebar-list li {
-  background-color: #7094bf;
-  padding: 10px;
-  margin: 10px auto;
-  width: calc(95% - 20px);
-  cursor: pointer;
+    background-color: #536a84;
+    padding: 10px;
+    margin: 10px auto;
+    width: calc(90% - 20px);
+    cursor: pointer;
 }
+
 #sidebar-search {
-  margin: 10px auto;
-  width: calc(95% - 20px);
-  padding: 10px;
+    margin: 10px auto;
+    width: calc(95% - 20px);
+    padding: 10px;
+    margin-top: 100px;
 }
