@@ -14,13 +14,14 @@ function LoadMap(props) {
                   key={index}
                   title={marker.name}
                   name={marker.name}
-                  address={marker.address}
+                    address={`${marker.location.address}, ${marker.location.postalCode}, ${marker.location.city}`}
                   position={{
                     lat: marker.location.lat,
                     lng: marker.location.lng }}
                   onClick={props.onMarkerClick}
                   animation={props.activeMarker ? (marker.name === props.activeMarker.title ? '1' : '0') : '0'}
                 />
+                    
               ))}
           <InfoWindow
             marker={props.activeMarker}
@@ -28,7 +29,7 @@ function LoadMap(props) {
             onClose={props.onInfoWindowClose}
           >
             <div>
-              <h3>{props.selectedPlace.name}</h3>
+              <h3 id="markerName">{props.selectedPlace.name}</h3>
               <p>{props.selectedPlace.address}</p>
             </div>
           </InfoWindow>

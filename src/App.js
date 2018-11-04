@@ -12,7 +12,7 @@ class App extends Component {
     showingInfoWindow: false,
     query: '',
     locations: [],
-    active: false
+    active: false,
   }
 
   componentDidMount = () => {
@@ -23,7 +23,9 @@ class App extends Component {
     fetch('https://api.foursquare.com/v2/venues/search?near=london&query=coffee&v=20180323&limit=6&intent=browse&radius=4000&client_id=JKHLLTRULLMBDKR32BFUKWNFQ0UKGKJOEVNDAQ24NWB2A50J&client_secret=AKBVI1TWWMAAJKMQ34240ENKBWDZ5YEEWCQZBJZ5QUQU4BOM')
     .then(res => res.json())
     .then(locations => {
-        this.setState({ locations: locations.response.venues });
+        this.setState({ 
+            locations: locations.response.venues,
+        });
       })
     .catch(error => this.onGetLocationsError('', error));
   }
@@ -68,12 +70,6 @@ class App extends Component {
 
   clearQuery = () => {
     this.setState({ query: '' })
-  }
-
-  onKeyPressed = (e) => { //add event to tab key press
-    if (e.keyCode === 13) {
-      document.activeElement.click()
-    }
   }
 
   render() {
